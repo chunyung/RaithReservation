@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Raith Auto-reservation System</title>
+    <script type="text/javascript">
+      function check_data()
+      {
+        if (document.myForm.account.value.length == 0)
+          alert("Please enter user name！");
+        else if (document.myForm.password.value.length == 0)
+          alert("Please enter password！");
+        else 
+          myForm.submit();
+      }
+    </script>
+  </head>
+  <body>
+    <p align="center"><img src="USC.png"><img src="logo_Raith.jpg"></p>  
+    <form action="checkpwd.php" method="post" name="myForm">
+      <table width="40%" align="center">
+        <tr>
+        	<td align= "center">
+        		<p> Welcome, CSL members. <br>Please log-in or create your account in below link!</p>
+        	</td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <font color="#3333FF">Account：</font> 
+            <input name="account" type="text" size="25">
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <font color="#3333FF">Password：</font> 
+            <input name="password" type="password" size="25">
+          </td>
+        </tr>
+        <tr>
+          <td align="center"> 
+            <input type="button" value="Login" onClick="check_data()">      　 
+            <input type="reset" value="Clear all">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p align="center">
+      <a href="join.htm">Create Account</a>　 
+  </body>
+</html>

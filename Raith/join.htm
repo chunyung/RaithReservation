@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Create Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+      function check_data()
+      {
+      	var pattern = /^\w+(\.\w+)*@\w+(\.\w+)*$/;
+      	//var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      	var str = document.myForm.account.value;
+      	if (!str.match(pattern))
+      	{
+      		alert("Please use email address as your account name");
+      		return false;
+      	}
+        if (document.myForm.account.value.length == 0)
+        {
+          alert("Please choose an account name");
+          return false;
+        }
+        if (document.myForm.account.value.length > 50)
+        {
+          alert("The length of account field can't be more than 50 characters");
+          return false;
+        }
+        if (document.myForm.password.value.length == 0)
+        {
+          alert("Please choose password");
+          return false;
+        }
+        if (document.myForm.password.value.length > 15)
+        {
+          alert("Password can't be longer than 15 characters");
+          return false;
+        }
+        if (document.myForm.re_password.value.length == 0)
+        {
+          alert("Please re-type password");
+          return false;
+        }
+        if (document.myForm.password.value != document.myForm.re_password.value)
+        {
+          alert("Password isn't matched");
+          return false;
+        }
+        if (document.myForm.name.value.length == 0)
+        {
+          alert("Please write down the your name");
+          return false;
+        }
+        myForm.submit();					
+      }
+    </script>		
+  </head>
+  <body>
+    <p align="center"><img src="createMyAccount.jpg"></p>
+    <form action="addmember.php" method="post" name="myForm">
+      <table border="2" align="center" bordercolor="#6666FF">
+        <tr> 
+          <td colspan="2" bgcolor="#6666FF" align="center"> 
+            <font color="#FFFFFF">Please fill-in following information (「*」required)</font>
+          </td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*Account(email address)：</td>
+          <td><input name="account" type="text" size="25"></td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*password：</td>
+          <td><input name="password" type="password" size="15"></td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*password re-type：</td>
+          <td><input name="re_password" type="password" size="15"></td>
+        </tr>
+        <tr bgcolor="#99FF99">
+          <td align="right">*name：</td>
+          <td><input name="name" type="text" size="25"></td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="right">*CSL verification code：</td>
+          <td><input name="csl" type="text" size="40"></td>
+        </tr>
+        <tr bgcolor="#99FF99"> 
+          <td align="center" colspan="2"> 
+            <input type="button" value="Create account" onClick="check_data()">　
+            <input type="reset" value="Reset">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p align="center"><a href="index.htm">Back</a></p>
+  </body>
+</html>
